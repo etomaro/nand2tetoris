@@ -9,10 +9,16 @@
  *                 else out does not change (out[t+1] = out[t])
  */
 
+//  Muxはloadが0の時はaを出力
+//  　　　laodが1の時はbを出力
+
 CHIP Bit {
     IN in, load;
     OUT out;
 
     PARTS:
     // Put your code here:
+    Mux(a=out1, b=in, sel=load, out=a1);
+    DFF(in=a1, out=out, out=out1);
+
 }
