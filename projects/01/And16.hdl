@@ -14,4 +14,6 @@ CHIP And16 {
 
     PARTS:
     // Put your code here:
+    // test code
+    Or16(a=a, b=b, out=out);
 }
