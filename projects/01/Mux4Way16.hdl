@@ -17,4 +17,32 @@ CHIP Mux4Way16 {
 
     PARTS:
     // Put your code here:
+    //Y1作成
+    Or(a=sel[0], b=sel[1], out=w1);
+    Not16(in[0]=w1, in[1]=w1, in[2]=w1, in[3]=w1, in[4]=w1, in[5]=w1, in[6]=w1, in[7]=w1, in[8]=w1, in[9]=w1, in[10]=w1, in[11]=w1, in[12]=w1, in[13]=w1, in[14]=w1, in[15]=w1, out=x1);
+    And16(a=x1, b=a, out=y1);
+
+    //Y2作成
+    Not(in=sel[0], out=v2);
+    Or(a=v2, b=sel[1], out=w2);
+    Not16(in[0]=w2, in[1]=w2, in[2]=w2, in[3]=w2, in[4]=w2, in[5]=w2, in[6]=w2, in[7]=w2, in[8]=w2, in[9]=w2, in[10]=w2, in[11]=w2, in[12]=w2, in[13]=w2, in[14]=w2, in[15]=w2, out=x2);
+    And16(a=x2, b=b, out=y2);
+
+    //Y3作成
+    Not(in=sel[1], out=v3);
+    Or(a=sel[0], b=v3, out=w3);
+    Not16(in[0]=w3, in[1]=w3, in[2]=w3, in[3]=w3, in[4]=w3, in[5]=w3, in[6]=w3, in[7]=w3, in[8]=w3, in[9]=w3, in[10]=w3, in[11]=w3, in[12]=w3, in[13]=w3, in[14]=w3, in[15]=w3, out=x3);
+    And16(a=x3, b=c, out=y3);
+
+    //Y4作成
+    And(a=sel[0], b=sel[1], out=x4);
+    And16(a[0]=x4, a[1]=x4, a[2]=x4, a[3]=x4, a[4]=x4, a[5]=x4, a[6]=x4, a[7]=x4, a[8]=x4, a[9]=x4, a[10]=x4, a[11]=x4, a[12]=x4, a[13]=x4, a[14]=x4, a[15]=x4, b=d, out=y4);
+
+    //Z1, Z2作成
+    Or16(a=y1, b=y2, out=z1);
+    Or16(a=y3, b=y4, out=z2);
+
+    //out作成
+    Or16(a=z1, b=z2, out=out);
+
 }
