@@ -4,3 +4,7 @@ in the Nand to Tetris course websites in Coursera.
 There is no need to modify the contents of this file.
 All you have to do is submit it as is, following the 
 Project 0 guidelines in the website.
+
+「エラー内容」
+sub bus of an internal node may not be used
+https://morimori-kochan.hatenablog.com/entry/2019/01/14/161700
