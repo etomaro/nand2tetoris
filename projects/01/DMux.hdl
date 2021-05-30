@@ -15,4 +15,10 @@ CHIP DMux {
 
     PARTS:
     // Put your code here:
+    //a作成
+    Not(in=sel, out=c);
+    And(a=c, b=in, out=a);
+    
+    //b作成
+    And(a=in, b=sel, out=b);
 }
