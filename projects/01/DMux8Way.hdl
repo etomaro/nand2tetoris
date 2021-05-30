@@ -17,4 +17,57 @@ CHIP DMux8Way {
 
     PARTS:
     // Put your code here:
+    //a作成
+    Or(a=sel[0], b=sel[1], out=z1);
+    Or(a=z1, b=sel[2], out=y1);
+    Not(in=y1, out=x1);
+    And(a=x1, b=in, out=a);
+
+    //b作成
+    Not(in=sel[0], out=z2);
+    Or(a=z2, b=sel[1], out=y2);
+    Or(a=y2, b=sel[2], out=x2);
+    Not(in=x2, out=w2);
+    And(a=w2, b=in, out=b);
+
+    //c作成
+    Not(in=sel[1], out=z3);
+    Or(a=z3, b=sel[0], out=y3);
+    Or(a=y3, b=sel[2], out=x3);
+    Not(in=x3, out=w3);
+    And(a=w3, b=in, out=c);
+
+    //d作成
+    Not(in=sel[2], out=z4);
+    And(a=z4, b=sel[1], out=y4);
+    And(a=y4, b=sel[0], out=x4);
+    And(a=x4, b=in, out=d);
+
+    //e作成
+    Not(in=sel[2], out=z5);
+    Or(a=z5, b=sel[1], out=y5);
+    Or(a=y5, b=sel[0], out=x5);
+    Not(in=x5, out=w5);
+    And(a=w5, b=in, out=e);
+
+    //f作成
+    Not(in=sel[1], out=z6);
+    And(a=z6, b=sel[0], out=y6);
+    And(a=y6, b=sel[2], out=x6);
+    And(a=x6, b=in, out=f);
+
+    //g作成
+    Not(in=sel[0], out=z7);
+    And(a=z7, b=sel[1], out=y7);
+    And(a=y7, b=sel[2], out=x7);
+    And(a=x7, b=in, out=g);
+
+    //h作成
+    And(a=sel[0], b=sel[1], out=z8);
+    And(a=z8, b=sel[2], out=y8);
+    And(a=y8, b=in, out=h);
+
+
+
+
 }
