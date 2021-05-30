@@ -17,4 +17,22 @@ CHIP DMux4Way {
 
     PARTS:
     // Put your code here:
+    //a作成
+    Or(a=sel[0], b=sel[1], out=z1);
+    Not(in=z1, out=y1);
+    And(a=y1, b=in, out=a);
+
+    //b作成
+    Not(in=sel[1], out=z2);
+    And(a=z2, b=sel[0], out=y2);
+    And(a=y2, b=in, out=b);
+
+    //c作成
+    Not(in=sel[0], out=z3);
+    And(a=z3, b=sel[1], out=y3);
+    And(a=y3, b=in, out=c);
+
+    //d作成
+    And(a=sel[0], b=sel[1], out=z4);
+    And(a=z4, b=in, out=d);
 }
