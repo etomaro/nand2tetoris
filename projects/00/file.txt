@@ -8,3 +8,8 @@ Project 0 guidelines in the website.
 「エラー内容」
 sub bus of an internal node may not be used
 https://morimori-kochan.hatenablog.com/entry/2019/01/14/161700
+
+「1の表現方法」
+trueとかく。(falseは0)
+(02例)
+Add16(a=in, b[0]=true, out=out);
