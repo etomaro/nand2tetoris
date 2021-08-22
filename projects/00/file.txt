@@ -13,3 +13,7 @@ https://morimori-kochan.hatenablog.com/entry/2019/01/14/161700
 trueとかく。(falseは0)
 (02例)
 Add16(a=in, b[0]=true, out=out);
+
+(02ALU)
+16ビットのtrue, false
+単にa=trueとすればいい(aが16ビットの時)
