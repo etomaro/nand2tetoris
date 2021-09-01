@@ -17,4 +17,13 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+    // 選択(elseとincrement)
+    Add16(a[0]=true, b=outz, out=outa);
+    Mux16(a=outz, b=outa, sel=inc, out=outb);
+    // 選択(outeとload)
+    Mux16(a=outb, b=in, sel=load, out=outc);
+    // 選択(outfとreset)
+    Mux16(a=outc, b=false, sel=reset, out=outd);
+    // 時間経過
+    Register(in=outd, load=true, out=outz, out=out);
 }
