@@ -16,4 +16,86 @@ CHIP RAM4K {
 
     PARTS:
     // Put your code here:
+
+    // RAM64の選択
+    // どのDMux8Wayか
+    DMux8Way(in=load, sel=address[3..5], a=outa, b=outb, c=outc, d=outd, e=oute, f=outf, g=outg, h=outh);
+    // どのRAM64か
+    DMux8Way(in=outa, sel=address[0..2], a=outa1, b=outa2, c=outa3, d=outa4, e=outa5, f=outa6, g=outa7, h=outa8);
+    DMux8Way(in=outb, sel=address[0..2], a=outb1, b=outb2, c=outb3, d=outb4, e=outb5, f=outb6, g=outb7, h=outb8);
+    DMux8Way(in=outc, sel=address[0..2], a=outc1, b=outc2, c=outc3, d=outc4, e=outc5, f=outc6, g=outc7, h=outc8);
+    DMux8Way(in=outd, sel=address[0..2], a=outd1, b=outd2, c=outd3, d=outd4, e=outd5, f=outd6, g=outd7, h=outd8);
+    DMux8Way(in=oute, sel=address[0..2], a=oute1, b=oute2, c=oute3, d=oute4, e=oute5, f=oute6, g=oute7, h=oute8);
+    DMux8Way(in=outf, sel=address[0..2], a=outf1, b=outf2, c=outf3, d=outf4, e=outf5, f=outf6, g=outf7, h=outf8);
+    DMux8Way(in=outg, sel=address[0..2], a=outg1, b=outg2, c=outg3, d=outg4, e=outg5, f=outg6, g=outg7, h=outg8);
+    DMux8Way(in=outh, sel=address[0..2], a=outh1, b=outh2, c=outh3, d=outh4, e=outh5, f=outh6, g=outh7, h=outh8);
+    
+    // それぞれのRAM64の処理
+    RAM64(in=in, load=outa1, address=address[6..11], out=outRam0);
+    RAM64(in=in, load=outa2, address=address[6..11], out=outRam1);
+    RAM64(in=in, load=outa3, address=address[6..11], out=outRam2);
+    RAM64(in=in, load=outa4, address=address[6..11], out=outRam3);
+    RAM64(in=in, load=outa5, address=address[6..11], out=outRam4);
+    RAM64(in=in, load=outa6, address=address[6..11], out=outRam5);
+    RAM64(in=in, load=outa7, address=address[6..11], out=outRam6);
+    RAM64(in=in, load=outa8, address=address[6..11], out=outRam7);
+    RAM64(in=in, load=outb1, address=address[6..11], out=outRam8);
+    RAM64(in=in, load=outb2, address=address[6..11], out=outRam9);
+    RAM64(in=in, load=outb3, address=address[6..11], out=outRam10);
+    RAM64(in=in, load=outb4, address=address[6..11], out=outRam11);
+    RAM64(in=in, load=outb5, address=address[6..11], out=outRam12);
+    RAM64(in=in, load=outb6, address=address[6..11], out=outRam13);
+    RAM64(in=in, load=outb7, address=address[6..11], out=outRam14);
+    RAM64(in=in, load=outb8, address=address[6..11], out=outRam15);
+    RAM64(in=in, load=outc1, address=address[6..11], out=outRam16);
+    RAM64(in=in, load=outc2, address=address[6..11], out=outRam17);
+    RAM64(in=in, load=outc3, address=address[6..11], out=outRam18);
+    RAM64(in=in, load=outc4, address=address[6..11], out=outRam19);
+    RAM64(in=in, load=outc5, address=address[6..11], out=outRam20);
+    RAM64(in=in, load=outc6, address=address[6..11], out=outRam21);
+    RAM64(in=in, load=outc7, address=address[6..11], out=outRam22);
+    RAM64(in=in, load=outc8, address=address[6..11], out=outRam23);
+    RAM64(in=in, load=outd1, address=address[6..11], out=outRam24);
+    RAM64(in=in, load=outd2, address=address[6..11], out=outRam25);
+    RAM64(in=in, load=outd3, address=address[6..11], out=outRam26);
+    RAM64(in=in, load=outd4, address=address[6..11], out=outRam27);
+    RAM64(in=in, load=outd5, address=address[6..11], out=outRam28);
+    RAM64(in=in, load=outd6, address=address[6..11], out=outRam29);
+    RAM64(in=in, load=outd7, address=address[6..11], out=outRam30);
+    RAM64(in=in, load=outd8, address=address[6..11], out=outRam31);
+    RAM64(in=in, load=oute1, address=address[6..11], out=outRam32);
+    RAM64(in=in, load=oute2, address=address[6..11], out=outRam33);
+    RAM64(in=in, load=oute3, address=address[6..11], out=outRam34);
+    RAM64(in=in, load=oute4, address=address[6..11], out=outRam35);
+    RAM64(in=in, load=oute5, address=address[6..11], out=outRam36);
+    RAM64(in=in, load=oute6, address=address[6..11], out=outRam37);
+    RAM64(in=in, load=oute7, address=address[6..11], out=outRam38);
+    RAM64(in=in, load=oute8, address=address[6..11], out=outRam39);
+    RAM64(in=in, load=outf1, address=address[6..11], out=outRam40);
+    RAM64(in=in, load=outf2, address=address[6..11], out=outRam41);
+    RAM64(in=in, load=outf3, address=address[6..11], out=outRam42);
+    RAM64(in=in, load=outf4, address=address[6..11], out=outRam43);
+    RAM64(in=in, load=outf5, address=address[6..11], out=outRam44);
+    RAM64(in=in, load=outf6, address=address[6..11], out=outRam45);
+    RAM64(in=in, load=outf7, address=address[6..11], out=outRam46);
+    RAM64(in=in, load=outf8, address=address[6..11], out=outRam47);
+    RAM64(in=in, load=outg1, address=address[6..11], out=outRam48);
+    RAM64(in=in, load=outg2, address=address[6..11], out=outRam49);
+    RAM64(in=in, load=outg3, address=address[6..11], out=outRam50);
+    RAM64(in=in, load=outg4, address=address[6..11], out=outRam51);
+    RAM64(in=in, load=outg5, address=address[6..11], out=outRam52);
+    RAM64(in=in, load=outg6, address=address[6..11], out=outRam53);
+    RAM64(in=in, load=outg7, address=address[6..11], out=outRam54);
+    RAM64(in=in, load=outg8, address=address[6..11], out=outRam55);
+    RAM64(in=in, load=outh1, address=address[6..11], out=outRam56);
+    RAM64(in=in, load=outh2, address=address[6..11], out=outRam57);
+    RAM64(in=in, load=outh3, address=address[6..11], out=outRam58);
+    RAM64(in=in, load=outh4, address=address[6..11], out=outRam59);
+    RAM64(in=in, load=outh5, address=address[6..11], out=outRam60);
+    RAM64(in=in, load=outh6, address=address[6..11], out=outRam61);
+    RAM64(in=in, load=outh7, address=address[6..11], out=outRam62);
+    RAM64(in=in, load=outh8, address=address[6..11], out=outRam63);
+
+    // 出力値の選択
+    Mux8Way16(a=outRamNUMBER, b=outRamNUMBER, c=outRamNUMBER, d=outRamNUMBER, e=outRamNUMBER, f=outRamNUMBER, g=outRamNUMBER, h=outRamNUMBER, sel=address[0..2], out=outz);
 }
