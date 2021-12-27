@@ -1,5 +1,5 @@
-// 1‚©‚ç100‚Ü‚Å‚Ì˜a‚ð‹‚ß‚é
-// BuildIn‚ÌƒAƒZƒ“ƒuƒ‰ACPUƒGƒ~ƒ…ƒŒ[ƒ^[‚ÌŽg‚¢•ûƒeƒXƒg
+// 1ï¿½ï¿½ï¿½ï¿½100ï¿½Ü‚Å‚Ì˜aï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
+// BuildInï¿½ÌƒAï¿½Zï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ACPUï¿½Gï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½[ï¿½ÌŽgï¿½ï¿½ï¿½ï¿½ï¿½eï¿½Xï¿½g
 
     @i
     M=1
@@ -12,7 +12,7 @@
     D=D-A
     @END
     D;JGT
-    @i
+    @i 
     D=M
     @sum
     M=D+M
