@@ -97,5 +97,5 @@ CHIP RAM4K {
     RAM64(in=in, load=outh8, address=address[6..11], out=outRam63);
 
     // 出力値の選択
-    Mux8Way16(a=outRamNUMBER, b=outRamNUMBER, c=outRamNUMBER, d=outRamNUMBER, e=outRamNUMBER, f=outRamNUMBER, g=outRamNUMBER, h=outRamNUMBER, sel=address[0..2], out=outz);
+    Mux8Way16(a=outRamNUMBER, b=outRamNUMBER, c=outRamNUMBER, d=outRamNUMBER, e=outRamNUMBER, f=outRamNUMBER, g=outRamNUMBER, h=outRamNUMBER, sel=address[0..2], out=out);
 }
