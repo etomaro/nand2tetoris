@@ -1,19 +1,56 @@
-The only purpose of this file is to practice submitting files
-in the Nand to Tetris course websites in Coursera.
 
-There is no need to modify the contents of this file.
-All you have to do is submit it as is, following the 
-Project 0 guidelines in the website.
+------------------------------学習の流れ------------------------------
+1.0 組み合わせ回路と順路回路
+1.1 ALUの作成
+   ・NAND -> さまざまな論理ゲートの作成(ORやXORなど) -> 論理回路(ALU)を作成する
+   ・1章、2章
+   ・keyward: 論理回路(ALU)
+   ・AND, AND16, DMux, DMux4Way, DMux8Wway, Mux, Mux4Way16, Mux8Way16, Mux16,
+     Not, Not16, Or, Or8Way, Or16, Xor, Add16, ALU-nostart, ALU,
+     FullAdder, HalfAdder, Inc16
+1.2 記憶装置RAMの作成
+   ・flip-flop -> 
+   ・3章
+   ・keyward: 記憶素子(順序回路)
+   ・Bit, Pc, Ram8, Register, Ram64, Ram4k, Ram16k, Ram512k
+2.  機械語でメモリ、プロセッサ、レジスタを操作
+3.  機械語をバイナリに変換するアセンブラの作成
+---------------------------------------------------------------------
 
-「エラー内容」
-sub bus of an internal node may not be used
-https://morimori-kochan.hatenablog.com/entry/2019/01/14/161700
 
-「1の表現方法」
-trueとかく。(falseは0)
-(02例)
-Add16(a=in, b[0]=true, out=out);
+---------------------------各章で作成するもの---------------------------
+1章.  AND, AND16, DMux, DMux4Way, DMux8Wway, Mux, Mux4Way16, Mux8Way16, Mux16,
+      Not, Not16, Or, Or8Way, Or16, Xor, Add16
+2章.  ALU-nostart, ALU, FullAdder, HalfAdder, Inc16
+3章.  Bit, Pc, Ram8, Register, Ram64, Ram4k, Ram16k, Ram512k
+4章.  fill(入出力), mult(乗算)
+5章.  Computer, ComputerAdd-external, ComputerAdd, ComputerMax-external,
+      ComputerMax, ComputerRect-external, ComputerRect, CPU-external, 
+      CPU, Memory
+6章.  add, max, pong, rect 
+7章.  MemoryAccess(Basic, Pointer, Static), StackArithmetic(SimpleAdd, StackTest)
+8章.  FunctionCalls(FibonacciElement, NestedCall, SimpleFunction, StaticsTest)
+      ProgramFlow(BasicLoop, FibonacciSeries)
+9章.  Average, BitmapEditor, Fraction, HelloWorld, List, Square
+10章. ArrayTest, ExpressionLessSquare, Square
+11章. Average, ComplexArrays, ConvertToBin, Pong, Seven, Square
+12章. Array, Keyboard, Math, Memory, Output, Screen, String, Sys
+---------------------------------------------------------------------
 
-(02ALU)
-16ビットのtrue, false
-単にa=trueとすればいい(aが16ビットの時)
+
+---------------------------ソフトウェアツール---------------------------
+1. ハードウェアシュミレーター
+   ->論理回路、論理ゲートをテストする(ALUなど)
+2. CPUエミュレーター
+   ->
+3. VMエミュレーター
+   ->
+4. アセンブラ
+   ->
+5. Jackコンパイラ
+   ->
+6. オペレーティングシステム
+   ->
+7. テキスト比較
+   ->
+---------------------------------------------------------------------

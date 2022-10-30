@@ -1,0 +1,5 @@
+------------------------------errorメモ------------------------------
+sub bus of an internal node may not be used
+https://morimori-kochan.hatenablog.com/entry/2019/01/14/161700
+
+----------------------------------------------------------------------
