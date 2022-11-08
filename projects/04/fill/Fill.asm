@@ -12,57 +12,30 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
-(LOOP)
-    // スクリーンアドレスをR0に保存
-    @SCREEN    // @16384
-    D=A 
-    @R0
-    M=D
-    // キーボードアドレスの値が0かどうか調べる(入力があるかどうか)
-    @KBD    // @24576
-    D=M
-    @FILLWHITE
-    D;JEQ    // 0の場合ジャンプ
-    @FILLBLACK
-    0;JMP    // 0ではない場合ジャンプ
 
-(FILLWHITE)
-    // R0の値によってジャンプ
-    @R0
-    D=M
-    @24575    // スクリーンの最後のマップメモリアドレス
-    D=D-A    // R0-24575
-    @LOOP
-    D;JEQ    // 0の場合ジャンプ
-    // R0に保存されているアドレスの値を0にする
-    @R0
-    A=M
+// ルールとしてR0とR1に保存される値を乗算する
+// R2に答えを保存する。R0の値をR1回たす。
+    
+    // M[2]:答え, M[3]:ループ回数, M[4]:合計値
+    @3
+    M=1
+    @4
     M=0
-    //  R0をインクリメント
-    @R0
-    M=M+1
-
-    //  FILEWHITEにジャンプ(ループ)
-    @FILLWHITE
-    0;JMP
-
-(FILLBLACK)
-    // R0の値によってジャンプ
-    @R0
+(LOOP)
+    @3
     D=M
-    @24575    // スクリーンの最後のマップメモリアドレス
-    D=D-A    // R0-24575
-    @LOOP
-    D;JEQ    // 0の場合ジャンプ
-    // R0に保存されているアドレスの値を1111111111111111(-1)にする
-    @R0
-    A=M
-    D=0
-    M=!D
-    //  R0をインクリメント
-    @R0
-    M=M+1
-
-    //  FILEBLACKにジャンプ(ループ)
-    @FILLBLACK
+    @1
+    D=D-M
+    @END
+    D;JGT  // M[3] - R1 > 0
+    @0
+    D=M 
+    @2
+    M=M+D  // 合計値を計算
+    @3
+    M=M+1  // ループ回数をインクリメント
+    @LOOP 
     0;JMP
+(END)
+    @END
+    0;JMP  // 無限ループ

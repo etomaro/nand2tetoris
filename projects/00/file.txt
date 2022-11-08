@@ -13,8 +13,9 @@
    ・3章
    ・keyward: 記憶素子(順序回路)
    ・Bit, Pc, Ram8, Register, Ram64, Ram4k, Ram16k, Ram512k
-2.  機械語でメモリ、プロセッサ、レジスタを操作
-3.  機械語をバイナリに変換するアセンブラの作成
+2.  アセンブリ言語を使って(アセンブラで変換した機械語)でメモリ、プロセッサ、レジスタを操作
+   ・4章
+3.  アセンブリ言語を機械語(バイナリ)に変換するアセンブラの作成
 ---------------------------------------------------------------------
 
 
@@ -42,15 +43,36 @@
 1. ハードウェアシュミレーター
    ->論理回路、論理ゲートをテストする(ALUなど)
 2. CPUエミュレーター
-   ->
+   ->バイナリファイル(.hack)を実行する
 3. VMエミュレーター
    ->
 4. アセンブラ
-   ->
+   ->アセンブリ言語(.asm)をバイナリ(.hack)に変換する
 5. Jackコンパイラ
    ->
 6. オペレーティングシステム
    ->
 7. テキスト比較
    ->
+
+--動かすときのコマンド(mac)--
+・HardwareSimualtor
+権限付与
+$ chmod +x ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh &
+起動
+$ ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh &
+テスト 
+$
+
+・CPUEmulator
+$ chmod +x ~/Desktop/nand2tetoris/tools/CPUEmulator.sh &
+$ ~/Desktop/nand2tetoris/tools/CPUEmulator.sh &
+$ ~/Desktop/nand2tetoris/tools/CPUEmulator.sh & Fill.tst
+
+・Assembler
+$ chmod +x ~/Desktop/nand2tetoris/tools/Assembler.sh &
+$ ~/Desktop/nand2tetoris/tools/Assembler.sh &
+
+--------------------------
+
 ---------------------------------------------------------------------
