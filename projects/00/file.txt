@@ -62,7 +62,7 @@ $ chmod +x ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh &
 起動
 $ ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh &
 テスト 
-$
+$ ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh & Memory.tst
 
 ・CPUEmulator
 $ chmod +x ~/Desktop/nand2tetoris/tools/CPUEmulator.sh &

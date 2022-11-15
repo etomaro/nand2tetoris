@@ -28,5 +28,25 @@ CHIP Memory {
 
     PARTS:
     // Put your code here:
-    RAM16K(in=in, load=load, adress[15]=adress[15], out=out[16])
+    DMux8Way(in=load, sel=address[12..14], a=outa, b=outb, c=outc, d=outd, e=oute, f=outf, g=outg, h=outh);
+
+    // RAM16K用のload値を取得
+    Or(a=outa, b=outb, out=outora);
+    Or(a=outc, b=outd, out=outorb);
+    Or(a=outora, b=outorb, out=outorc);
+
+    // RAM16K 
+    RAM16K(in=in, load=outorc, address=address[0..13], out=outrama);
+
+    // SCREEN用のload値を取得
+    Or(a=oute, b=outf, out=outord);
+
+    // RAM8K(SCREEN)
+    Screen(in=in, load=outord, address=address[0..12], out=outscreen);
+
+    // Register(KEYBOARD)
+    Keyboard(out=outkey);
+
+    // out値の選択(Mux8Way16)
+    Mux8Way16(a=outrama, b=outrama, c=outrama, d=outrama, e=outscreen, f=outscreen, g=outkey, h=false, sel=address[12..14], out=out);
 }
