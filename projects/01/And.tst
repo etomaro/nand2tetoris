@@ -6,7 +6,7 @@
 load And.hdl,
 output-file And.out,
 compare-to And.cmp,
-output-list a%B3.1.3 b%B3.1.3 out%B3.1.3;
+output-list a%B3.1.3 b%B3.1.3 out%B3.1.3;  // B3.1.3は3マス開けて1bit置換して3マス開けるという意味。出力してみるとわかる。
 
 set a 0,
 set b 0,
