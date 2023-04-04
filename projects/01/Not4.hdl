@@ -1,15 +1,11 @@
-/**
- * And gate: 
- * out = 1 if (a == 1 and b == 1)
- *       0 otherwise
- */
-
-CHIP And {
-    IN a, b;
-    OUT out;
+CHIP Not4 {
+    IN in[4];
+    OUT out[4];
 
     PARTS:
     // Put your code here:
-    Nand(a=a, b=b, out=c);
-    Not(in=c, out=out);
+    Nand(a=in[0], b=in[0], out=out[0]);
+    Nand(a=in[1], b=in[1], out=out[1]);
+    Nand(a=in[2], b=in[2], out=out[2]);
+    Nand(a=in[3], b=in[3], out=out[3]);
 }

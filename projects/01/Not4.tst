@@ -1,24 +1,20 @@
-load And4.hdl,
-output-file And4.out,
-compare-to And4.cmp,
-output-list a%B3.4.3 b%B3.4.3 out%B3.4.3;
+load Not4.hdl,
+output-file Not4.out,
+compare-to Not4.cmp,
+output-list in%B3.4.3 out%B3.4.3;
 
-set a %B0000,
-set b %B0000,
+set in %B0000,
 eval,
 output;
 
-set a %B0101,
-set b %B0001,
+set in %B0101,
 eval,
 output;
 
-set a %B0111,
-set b %B1110,
+set in %B1010,
 eval,
 output;
 
-set a %B1111,
-set b %B1111,
+set in %B1111,
 eval,
 output;
