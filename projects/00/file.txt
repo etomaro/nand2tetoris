@@ -13,13 +13,14 @@
    ・3章
    ・keyward: 記憶素子(順序回路)
    ・Bit, Pc, Ram8, Register, Ram64, Ram4k, Ram16k, Ram512k
-2.  アセンブリ言語を使って(アセンブラで変換した機械語)でメモリ、プロセッサ、レジスタを操作
+2.  アセンブリ言語を使って(6章で作成するアセンブラで変換した機械語)でメモリ、プロセッサ、レジスタを操作
    ・4章
 3.  アセンブリ言語を機械語(バイナリ)に変換するアセンブラの作成
 ---------------------------------------------------------------------
 
 
 ---------------------------各章で作成するもの---------------------------
+(Hardware)
 1章.  AND, AND16, DMux, DMux4Way, DMux8Wway, Mux, Mux4Way16, Mux8Way16, Mux16,
       Not, Not16, Or, Or8Way, Or16, Xor, Add16
 2章.  ALU-nostart, ALU, FullAdder, HalfAdder, Inc16
@@ -28,6 +29,8 @@
 5章.  Computer, ComputerAdd-external, ComputerAdd, ComputerMax-external,
       ComputerMax, ComputerRect-external, ComputerRect, CPU-external, 
       CPU, Memory
+
+(Software)
 6章.  add, max, pong, rect 
 7章.  MemoryAccess(Basic, Pointer, Static), StackArithmetic(SimpleAdd, StackTest)
 8章.  FunctionCalls(FibonacciElement, NestedCall, SimpleFunction, StaticsTest)
@@ -63,6 +66,7 @@ $ chmod +x ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh &
 $ ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh &
 テスト 
 $ ~/Desktop/nand2tetoris/tools/HardwareSimulator.sh & Memory.tst
+$ HardwareSimulator Add16.tst 
 
 ・CPUEmulator
 $ chmod +x ~/Desktop/nand2tetoris/tools/CPUEmulator.sh &
