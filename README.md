@@ -77,6 +77,9 @@ $ ~/Desktop/nand2tetoris/tools/CPUEmulator.sh & Fill.tst
 $ chmod +x ~/Desktop/nand2tetoris/tools/Assembler.sh &
 $ ~/Desktop/nand2tetoris/tools/Assembler.sh &
 
---------------------------
-
 ---------------------------------------------------------------------
+
+--------------------------shコマンド--------------------------------
+1. 新しくロジックを作成する(.hdl,.tst,.cmpファイルが作成される)
+実行はprojects/01で行う
+$ sh create_new_rogic.sh NEW_ROGIC_NAME
