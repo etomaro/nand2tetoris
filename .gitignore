@@ -1,0 +1,4 @@
+tools/bin/*
+tools/builtInChips/*
+tools/builtInVMCode/*
+tools/OS/*
