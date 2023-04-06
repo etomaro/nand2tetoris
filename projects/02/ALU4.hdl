@@ -1,46 +1,40 @@
-// 編集途中
-
-CHIP ALU {
-    IN  
-        x[4], y[4]  // 4-bit inputs        
-        zx, // zero the x input?
-        nx, // negate the x input?
-        zy, // zero the y input?
-        ny, // negate the y input?
-        f,  // compute out = x + y (if 1) or x & y (if 0)
-        no; // negate the out output?
-
+CHIP ALU4 {
+    IN 
+        a[4], b[4],
+        zx,
+        nx,
+        zy,
+        ny,
+        f,
+        no;
     OUT 
-        out[4], // 4-bit output
-        zr, // 1 if (out == 0), 0 otherwise
-        ng; // 1 if (out < 0),  0 otherwise
+        out[4],
+        zr,
+        ng;
 
     PARTS:
-   // Put you code here:
-   //zx
-   Mux16(a=true, b=false, sel=zx, out=outa);
-   And16(a=outa, b=x, out=outb);
-   //nx
-   Not16(in=outb, out=outc);
-   Mux16(a=outb, b=outc, sel=nx, out=outd);
-   //zy
-   Mux16(a=true, b=false, sel=zy, out=oute);
-   And16(a=oute, b=y, out=outf);
-   //ny
-   Not16(in=outf, out=outg);
-   Mux16(a=outf, b=outg, sel=ny, out=outh);
-   //f
-   And16(a=outd, b=outh, out=outi);
-   Add16(a=outd, b=outh, out=outj);
-   Mux16(a=outi, b=outj, sel=f, out=outk);
-   //no
-   Not16(in=outk, out=outl);
-   Mux16(a=outk, b=outl, sel=no, out=out, out[0..7]=outzr0, out[8..15]=outzr1, out[15]=outng);
-   //zr(outが0かどうか)
-   Or8Way(in=outzr0, out=outzr2);
-   Or8Way(in=outzr1, out=outzr3);
-   Or(a=outzr2, b=outzr3, out=outzr4);
-   Not(in=outzr4, out=zr);
-   //ng(outが負かどうか)
-   And(a=outng, b=true, out=ng);
+    // Put your code here:
+    Mux4(a=true, b=false, sel=zx, out=outa);
+    And4(a=outa, b=x, out=outb);
+    //nx
+    Not4(in=outb, out=outc);
+    Mux4(a=outb, b=outc, sel=nx, out=outd);
+    //zy
+    Mux4(a=true, b=false, sel=zy, out=oute);
+    And4(a=oute, b=y, out=outf);
+    //ny
+    Not4(in=outf, out=outg);
+    Mux4(a=outf, b=outg, sel=ny, out=outh);
+    //f
+    And4(a=outd, b=outh, out=outi);
+    Add4(a=outd, b=outh, out=outj);
+    Mux4(a=outi, b=outj, sel=f, out=outk);
+    //no
+    Not4(in=outk, out=outl);
+    Mux4(a=outk, b=outl, sel=no, out=out, out[15]=outng);
+    //zr(outが0かどうか)
+    Or8Way(in=out, out=outzr2);
+    Not(in=outzr2, out=zr);
+    //ng(outが負かどうか)
+    And(a=outng, b=true, out=ng);
 }
