@@ -1,6 +1,6 @@
 CHIP ALU4 {
     IN 
-        a[4], b[4],
+        x[4], y[4],
         zx,
         nx,
         zy,
@@ -31,9 +31,9 @@ CHIP ALU4 {
     Mux4(a=outi, b=outj, sel=f, out=outk);
     //no
     Not4(in=outk, out=outl);
-    Mux4(a=outk, b=outl, sel=no, out=out, out[15]=outng);
+    Mux4(a=outk, b=outl, sel=no, out=out, out=outzr1, out[3]=outng);
     //zr(outが0かどうか)
-    Or8Way(in=out, out=outzr2);
+    Or4Way(in=outzr1, out=outzr2);
     Not(in=outzr2, out=zr);
     //ng(outが負かどうか)
     And(a=outng, b=true, out=ng);
