@@ -77,7 +77,7 @@ $ ~/Desktop/nand2tetoris/tools/CPUEmulator.sh & Fill.tst
 $ chmod +x ~/Desktop/nand2tetoris/tools/Assembler.sh &
 $ ~/Desktop/nand2tetoris/tools/Assembler.sh &
 
----------------------------------------------------------------------
+-------------------------------------------------------------------
 
 --------------------------shコマンド--------------------------------
 1. 新しくロジックを作成する(.hdl,.tst,.cmpファイルが作成される)
@@ -85,3 +85,11 @@ $ ~/Desktop/nand2tetoris/tools/Assembler.sh &
 $ sh create_new_rogic.sh NEW_ROGIC_NAME FOLDER
 ex: create_new_rogic.sh And4 01
 
+-------------------------------------------------------------------
+
+
+--------------------------circuitフォルダ--------------------------------
+
+Circuit Simulator Appletというツールで回路を復元できるtxtファイル
+
+-------------------------------------------------------------------
