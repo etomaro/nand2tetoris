@@ -1,0 +1,40 @@
+CHIP ALU4 {
+    IN 
+        x[4], y[4],
+        zx,
+        nx,
+        zy,
+        ny,
+        f,
+        no;
+    OUT 
+        out[4],
+        zr,
+        ng;
+
+    PARTS:
+    // Put your code here:
+    Mux4(a=true, b=false, sel=zx, out=outa);
+    And4(a=outa, b=x, out=outb);
+    //nx
+    Not4(in=outb, out=outc);
+    Mux4(a=outb, b=outc, sel=nx, out=outd);
+    //zy
+    Mux4(a=true, b=false, sel=zy, out=oute);
+    And4(a=oute, b=y, out=outf);
+    //ny
+    Not4(in=outf, out=outg);
+    Mux4(a=outf, b=outg, sel=ny, out=outh);
+    //f
+    And4(a=outd, b=outh, out=outi);
+    Add4(a=outd, b=outh, out=outj);
+    Mux4(a=outi, b=outj, sel=f, out=outk);
+    //no
+    Not4(in=outk, out=outl);
+    Mux4(a=outk, b=outl, sel=no, out=out, out=outzr1, out[3]=outng);
+    //zr(outが0かどうか)
+    Or4Way(in=outzr1, out=outzr2);
+    Not(in=outzr2, out=zr);
+    //ng(outが負かどうか)
+    And(a=outng, b=true, out=ng);
+}

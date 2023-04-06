@@ -1,0 +1,16 @@
+/**
+ * And gate: 
+ * out = 1 if (a == 1 and b == 1)
+ *       0 otherwise
+ */
+
+CHIP Or4Way {
+    IN in[4];
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    Or(a=in[0], b=in[1], out=c1);
+    Or(a=in[2], b=in[3], out=c2);
+    Or(a=c1, b=c2, out=out);
+}
