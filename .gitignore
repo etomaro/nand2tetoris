@@ -1,4 +1,4 @@
 tools/bin/*
 tools/builtInVMCode/*
 tools/OS/*
-tools/HardwareSimulator
+tools/bin/Hardware Simulator.dat
