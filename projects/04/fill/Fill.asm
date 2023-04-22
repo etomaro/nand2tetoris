@@ -1,56 +1,351 @@
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/04/Fill.asm
-
-// Runs an infinite loop that listens to the keyboard input.
-// When a key is pressed (any key), the program blackens the screen,
-// i.e. writes "black" in every pixel;
-// the screen should remain fully black as long as the key is pressed. 
-// When no key is pressed, the program clears the screen, i.e. writes
-// "white" in every pixel;
-// the screen should remain fully clear as long as no key is pressed.
-// keyboardを押したときM[24576]には値が入る。ここの処理は書かなくていい。
-
 // Put your code here.
 // keyが押されているとき(BLACK)に遷移。押されていないとき(WHITE)に遷移。
 // M[0]: スクリーンのアドレスを指定
-(LOOP)
-    @16384
-    D=A 
+
+
+// 512ピクセル * 256ピクセル
+// M[16384],M[16383], ... M[16414],M[16415]
+// M[16416],M[16417], ... M[16446],M[16447]
+// ....
+// M[24544],M[24545], ... M[24574],M[24575]
+
+
+// -------------V1: テスト用: screen全てを黒色にする: 1ループ1メモリ更新する-------------
+// ---------かなり時間がかかる: 8192(32*256)回ループする必要がある---------
+// ---------1ループ約0.38s: 合計約51分(0.38*8192)---------
+
+    // ループ用のアドレスを保存
+//     @SCREEN 
+//     D=A 
+//     @0  
+//     M=D
+// (LOOP)
+//     // ENDに行くかの判定
+//     @KBD
+//     D=A-1
+//     @0
+//     D=M-D 
+//     @END 
+//     D;JGT  // D>0の時ENDへ行く
+
+//     // 1111 1111 1111 1111(黒)を保存
+//     @0
+//     A=M
+//     M=-1
+
+//     // ループ用アドレスをインクリメント
+//     @0  
+//     M=M+1
+
+//     // 無条件でLOOPに移動
+//     @LOOP 
+//     0;JMP
+// (END)
+//     // 無限ループ
+//     @END 
+//     0;JMP
+
+
+// -------------V2: テスト用: screen全てを黒色にする: 1ループ32メモリ(1行)更新する-------------
+// ---------少し時間がかかる: 256回ループする必要がある---------
+// ---------1ループ約2s: 合計約8分(2*256)---------
+
+    // ループ用のアドレスを保存
+//     @SCREEN 
+//     D=A 
+//     @0  
+//     M=D
+// (LOOP)
+//     // ENDに行くかの判定
+//     @KBD
+//     D=A-1
+//     @0
+//     D=M-D 
+//     @END 
+//     D;JGT  // D>0の時ENDへ行く
+
+//     // 1111 1111 1111 1111(黒)を保存
+//     @0
+//     A=M
+//     M=-1  // 1
+
+//     A=A+1
+//     M=-1  // 2
+//     A=A+1
+//     M=-1  // 3
+//     A=A+1
+//     M=-1  // 4
+//     A=A+1
+//     M=-1  // 5
+//     A=A+1
+//     M=-1  // 6
+//     A=A+1
+//     M=-1  // 7
+//     A=A+1
+//     M=-1  // 8
+//     A=A+1
+//     M=-1  // 9
+//     A=A+1
+//     M=-1  // 10
+//     A=A+1
+//     M=-1  // 11
+//     A=A+1
+//     M=-1  // 12
+//     A=A+1
+//     M=-1  // 13
+//     A=A+1
+//     M=-1  // 14
+//     A=A+1
+//     M=-1  // 15
+//     A=A+1
+//     M=-1  // 16
+//     A=A+1
+//     M=-1  // 17
+//     A=A+1
+//     M=-1  // 18
+//     A=A+1
+//     M=-1  // 19
+//     A=A+1
+//     M=-1  // 20
+//     A=A+1
+//     M=-1  // 21
+//     A=A+1
+//     M=-1  // 22
+//     A=A+1
+//     M=-1  // 23
+//     A=A+1
+//     M=-1  // 24
+//     A=A+1
+//     M=-1  // 25
+//     A=A+1
+//     M=-1  // 26
+//     A=A+1
+//     M=-1  // 27
+//     A=A+1
+//     M=-1  // 28
+//     A=A+1
+//     M=-1  // 29
+//     A=A+1
+//     M=-1  // 30
+//     A=A+1
+//     M=-1  // 31
+//     A=A+1
+//     M=-1  // 32
+//     A=A+1
+
+//     // ループ用アドレスをインクリメント
+//     D=A
+//     @0  
+//     M=D
+
+//     // 無条件でLOOPに移動
+//     @LOOP 
+//     0;JMP
+// (END)
+//     // 無限ループ
+//     @END 
+//     0;JMP
+
+
+// --------------本番用: keyが押されているときスクリーンを黒くする--------------
+// M[0]: ループ用アドレス
+
+    @SCREEN
+    D=A
     @0
     M=D
-    @24576
-    D=M
-    @WHITE 
-    D;JEQ  // D=0の時WHITEに遷移
-    @BLACK
-    D;JNE  // D≠0の時BLACKに遷移
-(BLACK)
-    @0
-    D=M
-    @24576
-    D=D-A
-    @LOOP
-    D;JEQ  // R0=24576の時ジャンプ
-    @0
-    A=M 
-    M=-1
-    @0 
-    M=M+1  // インクリメント
-    @BLACK 
-    0;JMP  
 (WHITE)
+    // ---keybordが押されているときCHANGE_TO_BLACKへ飛ぶ---
+    @KBD 
+    D=M 
+    @CHANGE_TO_BLACK
+    D;JNE  // D not 0の時 jump
+
+    // ---screenをwhiteにする処理---
     @0
-    D=M
-    @24576
-    D=D-A
-    @LOOP
-    D;JEQ  // R0=24576の時ジャンプ
+    A=M
+    M=0  // 1
+    A=A+1
+    M=0  // 2
+    A=A+1
+    M=0  // 3
+    A=A+1
+    M=0  // 4
+    A=A+1
+    M=0  // 5
+    A=A+1
+    M=0  // 6
+    A=A+1
+    M=0  // 7
+    A=A+1
+    M=0  // 8
+    A=A+1
+    M=0  // 9
+    A=A+1
+    M=0  // 10
+    A=A+1
+    M=0  // 11
+    A=A+1
+    M=0  // 12
+    A=A+1
+    M=0  // 13
+    A=A+1
+    M=0  // 14
+    A=A+1
+    M=0  // 15
+    A=A+1
+    M=0  // 16
+    A=A+1
+    M=0  // 17
+    A=A+1
+    M=0  // 18
+    A=A+1
+    M=0  // 19
+    A=A+1
+    M=0  // 20
+    A=A+1
+    M=0  // 21
+    A=A+1
+    M=0  // 22
+    A=A+1
+    M=0  // 23
+    A=A+1
+    M=0  // 24
+    A=A+1
+    M=0  // 25
+    A=A+1
+    M=0  // 26
+    A=A+1
+    M=0  // 27
+    A=A+1
+    M=0  // 28
+    A=A+1
+    M=0  // 29
+    A=A+1
+    M=0  // 30
+    A=A+1
+    M=0  // 31
+    A=A+1
+    M=0  // 32
+    A=A+1
+
+    // ループ用アドレスをインクリメント
+    D=A
+    @0  
+    M=D
+
+    // 無条件でLOOPに移動
+    @WHITE
+    0;JMP
+
+(BLACK)
+    // ---keybordが押されていないときCHANGE_TO_WHITEへ飛ぶ---
+    @KBD 
+    D=M 
+    @CHANGE_TO_WHITE
+    D;JEQ  // D = 0の時 jump
+
+    // ---screenをblackにする処理---
     @0
-    A=M 
-    M=0
+    A=M
+    M=-1  // 1
+    A=A+1
+    M=-1  // 2
+    A=A+1
+    M=-1  // 3
+    A=A+1
+    M=-1  // 4
+    A=A+1
+    M=-1  // 5
+    A=A+1
+    M=-1  // 6
+    A=A+1
+    M=-1  // 7
+    A=A+1
+    M=-1  // 8
+    A=A+1
+    M=-1  // 9
+    A=A+1
+    M=-1  // 10
+    A=A+1
+    M=-1  // 11
+    A=A+1
+    M=-1  // 12
+    A=A+1
+    M=-1  // 13
+    A=A+1
+    M=-1  // 14
+    A=A+1
+    M=-1  // 15
+    A=A+1
+    M=-1  // 16
+    A=A+1
+    M=-1  // 17
+    A=A+1
+    M=-1  // 18
+    A=A+1
+    M=-1  // 19
+    A=A+1
+    M=-1  // 20
+    A=A+1
+    M=-1  // 21
+    A=A+1
+    M=-1  // 22
+    A=A+1
+    M=-1  // 23
+    A=A+1
+    M=-1  // 24
+    A=A+1
+    M=-1  // 25
+    A=A+1
+    M=-1  // 26
+    A=A+1
+    M=-1  // 27
+    A=A+1
+    M=-1  // 28
+    A=A+1
+    M=-1  // 29
+    A=A+1
+    M=-1  // 30
+    A=A+1
+    M=-1  // 31
+    A=A+1
+    M=-1  // 32
+    A=A+1
+
+    // ループ用アドレスをインクリメント
+    D=A
+    @0  
+    M=D
+
+    // 無条件でLOOPに移動
+    @BLACK
+    0;JMP
+
+(CHANGE_TO_WHITE)
+    // ---アドレスを初期化
+    @SCREEN 
+    D=A 
     @0 
-    M=M+1  // インクリメント
+    M=D
+    
+    // ---WHITEへJMP---
     @WHITE 
-    0;JMP   
+    0;JMP
+
+(CHANGE_TO_BLACK)
+    // ---アドレスを初期化
+    @SCREEN 
+    D=A 
+    @0 
+    M=D
+
+    // ---BLACKへJMP---
+    @BLACK 
+    0;JMP
+
+// while True:
+//     if btn.key:
+//         screen.black()
+//     else:
+//         screen.while()
