@@ -1,2 +1,7 @@
 keyboardが入力されたときと、MemoryでKeyboardの値が出力されるときは別問題な気がするけどそこのところどうなの？
 address[14],address[13] = 1, address[12] = 0の時keyboardのレジスタの値が出力されると思うが、どういうときにaddressの値を先ほどの条件の値にするのか
+
+C命令でARegisterに保存するときはどんな時
+-> A=1みたいな時のみ？
+
+A命令の時ALUは計算される？

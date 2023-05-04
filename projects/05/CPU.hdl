@@ -49,12 +49,12 @@ CHIP CPU {
     Or (a=instruction[5], b=noti15, out=loadA);
 
     // ARegister, DRegister, PCの更新
-    Mux16 (a=instruction, b=aluout, sel=instruction[15], out=mux0out);  // A命令の時instruction, C命令の時aluoutを出力
+    Mux16 (a=instruction, b=aluout, sel=instruction[15], out=mux0out);  // A命令の時instruction, C命令の時aluoutを出力 
     ARegister (in=mux0out, load=loadA, out=aout, out[0..14]=addressM);
-    PC (in=aout, load=loadPC, inc=true, reset=reset, out[0..14]=pc);
-    Mux16 (a=aout, b=inM, sel=instruction[12], out=mux1out);
     DRegister (in=mux0out, load=loadD, out=dout);
+    PC (in=aout, load=loadPC, inc=true, reset=reset, out[0..14]=pc);
 
+    Mux16 (a=aout, b=inM, sel=instruction[12], out=mux1out);  // AかMか
     ALU (
         x=dout,
         y=mux1out,
