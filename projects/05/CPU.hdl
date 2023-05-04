@@ -39,15 +39,17 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
-    And (a=instruction[3], b=instruction[15], out=writeM);
-
-    And (a=instruction[4], b=instruction[15], out=loadD);
-
-    Not (in=instruction[15], out=noti15);
+    // M,D,Aへの保存判定
+    // 1.M
+    And (a=instruction[3], b=instruction[15], out=writeM);  // C命令かつM保存の時, writeM=1
+    // 2.D
+    And (a=instruction[4], b=instruction[15], out=loadD);  // C命令かつD保存の時, loadD=1
+    // 3.A
+    Not (in=instruction[15], out=noti15);  // A命令の時またA保存の時, loadA=1
     Or (a=instruction[5], b=noti15, out=loadA);
 
-    Mux16 (a=instruction, b=aluout, sel=instruction[15], out=mux0out);
+    // ARegister, DRegister, PCの更新
+    Mux16 (a=instruction, b=aluout, sel=instruction[15], out=mux0out);  // A命令の時instruction, C命令の時aluoutを出力
     ARegister (in=mux0out, load=loadA, out=aout, out[0..14]=addressM);
     PC (in=aout, load=loadPC, inc=true, reset=reset, out[0..14]=pc);
     Mux16 (a=aout, b=inM, sel=instruction[12], out=mux1out);
