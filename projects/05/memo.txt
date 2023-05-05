@@ -5,3 +5,10 @@ C命令でARegisterに保存するときはどんな時
 -> A=1みたいな時のみ？
 
 A命令の時ALUは計算される？
+->計算される。ただ、InとOutはひとつ前のC命令の時のままでaluOutは使われない。
+
+CPUEmulatorとHardwareSimulatorのそれぞれの役割
+・HardwareSimualtor: .hdl
+  -> 物理的な回路を動かすことができる
+・CPUEmulator: .asm, .hack
+  -> ROM, RAM, CPUを統合的に備えてくれているのでアセンブリ言語を動かすことができる。
