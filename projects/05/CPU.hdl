@@ -55,15 +55,26 @@ CHIP CPU {
     PC (in=aout, load=loadPC, inc=true, reset=reset, out[0..14]=pc);
 
     Mux16 (a=aout, b=inM, sel=instruction[12], out=mux1out);  // AかMか
+
+    // A命令の時ALUのinput=0,output=0にする(comp=000000なので0と0のAndを計算して0が出力される)
+    Mux16(a=false, b=dout, sel=instruction[15], out=aluInDout);
+    Mux16(a=false, b=mux1out, sel=instruction[15], out=aluInMux1out);
+    Mux(a=false, b=instruction[11], sel=instruction[15], out=aluInInst11);
+    Mux(a=false, b=instruction[10], sel=instruction[15], out=aluInInst10);
+    Mux(a=false, b=instruction[9], sel=instruction[15], out=aluInInst9);
+    Mux(a=false, b=instruction[8], sel=instruction[15], out=aluInInst8);
+    Mux(a=false, b=instruction[7], sel=instruction[15], out=aluInInst7);
+    Mux(a=false, b=instruction[6], sel=instruction[15], out=aluInInst6);
+
     ALU (
-        x=dout,
-        y=mux1out,
-        zx=instruction[11],
-        nx=instruction[10],
-        zy=instruction[9],
-        ny=instruction[8],
-        f=instruction[7],
-        no=instruction[6],
+        x=aluInDout,
+        y=aluInMux1out,
+        zx=aluInInst11,
+        nx=aluInInst10,
+        zy=aluInInst9,
+        ny=aluInInst8,
+        f=aluInInst7,
+        no=aluInInst6,
         out=aluout,
         out=outM,
         zr=zr,
