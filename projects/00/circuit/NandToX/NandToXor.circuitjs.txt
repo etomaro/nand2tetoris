@@ -1,0 +1,6 @@
+$ 1 0.000005 10.20027730826997 50 5 43 5e-11
+. And 0 2 2 3 a 2 0 2 b 1 1 2 c 4 0 3 NandGateElm\s1\s2\s3\rInverterElm\s3\s4 0\\s2\\s5\\s5\s0\\s0.5\\s5
+. Not 0 4 1 2 in 1 0 2 out 2 0 3 NandGateElm\s1\s1\s2 0\\s2\\s0\\s5
+. Or 0 2 2 3 a 1 0 2 b 3 1 2 out 5 0 3 CustomCompositeElm\s1\s2\rCustomCompositeElm\s3\s4\rNandGateElm\s4\s2\s5 1\\sNot\\s0\\\\s2\\\\s5\\\\s5\s1\\sNot\\s0\\\\s2\\\\s5\\\\s5\s0\\s2\\s0\\s5
+. Xor 0 2 2 3 a 5 0 2 b 6 1 2 out 3 0 3 CustomCompositeElm\s1\s2\s3\rCustomCompositeElm\s5\s6\s1\rNandGateElm\s6\s5\s2 1\\sAnd\\s0\\\\s2\\\\s5\\\\s5\\s0\\\\s0.5\\\\s5\s1\\sOr\\s1\\\\sNot\\\\s0\\\\\\\\s2\\\\\\\\s5\\\\\\\\s5\\s1\\\\sNot\\\\s0\\\\\\\\s2\\\\\\\\s5\\\\\\\\s5\\s0\\\\s2\\\\s0\\\\s5\s0\\s2\\s5\\s5
+410 496 48 560 80 1 Xor 1\sAnd\s0\\s2\\s5\\s5\s0\\s0.5\\s5 1\sOr\s1\\sNot\\s0\\\\s2\\\\s5\\\\s5\s1\\sNot\\s0\\\\s2\\\\s5\\\\s5\s0\\s2\\s0\\s5 0\s2\s5\s5

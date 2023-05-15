@@ -1,0 +1,10 @@
+$ 1 0.000005 10.20027730826997 50 5 43 5e-11
+. Not 0 4 1 2 in 1 0 2 out 2 0 3 NandGateElm\s1\s1\s2 0\\s2\\s0\\s5
+. Or 0 2 2 3 a 1 0 2 b 3 1 2 out 5 0 3 CustomCompositeElm\s1\s2\rCustomCompositeElm\s3\s4\rNandGateElm\s4\s2\s5 1\\sNot\\s0\\\\s2\\\\s5\\\\s5\s1\\sNot\\s0\\\\s2\\\\s5\\\\s5\s0\\s2\\s0\\s5
+410 320 -400 464 -368 1 Or 1\sNot\s0\\s2\\s5\\s5 1\sNot\s0\\s2\\s5\\s5 0\s2\s0\s5
+L 272 -400 224 -400 2 0 false 5 0
+L 272 -368 224 -368 2 0 false 5 0
+M 464 -400 512 -400 2 2.5
+w 272 -400 320 -400 0
+w 272 -368 320 -368 0
+w 416 -400 464 -400 0
