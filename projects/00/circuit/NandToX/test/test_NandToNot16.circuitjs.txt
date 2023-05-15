@@ -1,0 +1,36 @@
+$ 1 0.000005 10.20027730826997 50 5 43 5e-11
+. Not 0 4 1 2 in 1 0 2 out 2 0 3 NandGateElm\s1\s1\s2 0\\s2\\s0\\s5
+. Not16 0 4 16 32 in1 1 0 2 in10 29 9 2 in11 25 10 2 in12 27 11 2 in13 17 12 2 in14 19 13 2 in15 23 14 2 in16 21 15 2 in2 3 1 2 in3 7 2 2 in4 5 3 2 in5 15 4 2 in6 13 5 2 in7 9 6 2 in8 11 7 2 in9 31 8 2 out1 2 0 3 out10 30 9 3 out11 26 10 3 out12 28 11 3 out13 18 12 3 out14 20 13 3 out15 24 14 3 out16 22 15 3 out2 4 1 3 out3 8 2 3 out4 6 3 3 out5 16 4 3 out6 14 5 3 out7 10 6 3 out8 12 7 3 out9 32 8 3 CustomCompositeElm\s1\s2\rCustomCompositeElm\s3\s4\rCustomCompositeElm\s5\s6\rCustomCompositeElm\s7\s8\rCustomCompositeElm\s9\s10\rCustomCompositeElm\s11\s12\rCustomCompositeElm\s13\s14\rCustomCompositeElm\s15\s16\rCustomCompositeElm\s17\s18\rCustomCompositeElm\s19\s20\rCustomCompositeElm\s21\s22\rCustomCompositeElm\s23\s24\rCustomCompositeElm\s25\s26\rCustomCompositeElm\s27\s28\rCustomCompositeElm\s29\s30\rCustomCompositeElm\s31\s32 1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5\s1\\sNot\\s0\\\\s2\\\\s0\\\\s5
+410 -912 96 -800 128 1 Not16 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5 1\sNot\s0\\s2\\s0\\s5
+L -912 96 -976 96 2 1 false 5 0
+L -912 128 -976 128 2 1 false 5 0
+L -912 160 -976 160 2 1 false 5 0
+L -912 192 -976 192 2 1 false 5 0
+L -912 320 -976 320 2 1 false 5 0
+L -912 288 -976 288 2 1 false 5 0
+L -912 256 -976 256 2 1 false 5 0
+L -912 224 -976 224 2 1 false 5 0
+L -912 480 -976 480 2 1 false 5 0
+L -912 512 -976 512 2 1 false 5 0
+L -912 544 -976 544 2 1 false 5 0
+L -912 576 -976 576 2 1 false 5 0
+L -912 448 -976 448 2 1 false 5 0
+L -912 416 -976 416 2 1 false 5 0
+L -912 384 -976 384 2 1 false 5 0
+L -912 352 -976 352 2 1 false 5 0
+M -752 96 -688 96 2 2.5
+M -752 128 -688 128 2 2.5
+M -752 192 -688 192 2 2.5
+M -752 160 -688 160 2 2.5
+M -752 288 -688 288 2 2.5
+M -752 320 -688 320 2 2.5
+M -752 256 -688 256 2 2.5
+M -752 224 -688 224 2 2.5
+M -752 480 -688 480 2 2.5
+M -752 512 -688 512 2 2.5
+M -752 576 -688 576 2 2.5
+M -752 544 -688 544 2 2.5
+M -752 416 -688 416 2 2.5
+M -752 448 -688 448 2 2.5
+M -752 384 -688 384 2 2.5
+M -752 352 -688 352 2 2.5
