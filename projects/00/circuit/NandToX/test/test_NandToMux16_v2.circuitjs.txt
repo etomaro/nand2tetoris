@@ -1,0 +1,52 @@
+$ 1 0.000005 10.20027730826997 50 5 43 5e-11
+. Mux16 1 4 33 49 a1 1 0 2 a10 86 9 2 a11 74 10 2 a12 83 11 2 a13 50 12 2 a14 59 13 2 a15 71 14 2 a16 62 15 2 a2 11 1 2 a3 23 2 2 a4 14 3 2 a5 47 4 2 a6 38 5 2 a7 26 6 2 a8 35 7 2 a9 95 8 2 b1 2 16 2 b10 87 25 2 b11 75 26 2 b12 84 27 2 b13 51 28 2 b14 60 29 2 b15 72 30 2 b16 63 31 2 b2 12 17 2 b3 24 18 2 b4 15 19 2 b5 48 20 2 b6 39 21 2 b7 27 22 2 b8 36 23 2 b9 96 24 2 out1 7 0 3 out10 91 9 3 out11 79 10 3 out12 85 11 3 out13 55 12 3 out14 61 13 3 out15 73 14 3 out16 67 15 3 out2 13 1 3 out3 25 2 3 out4 19 3 3 out5 49 4 3 out6 43 5 3 out7 31 6 3 out8 37 7 3 out9 97 8 3 sel 5 1 1 MultiplexerElm\s1\s2\s3\s4\s5\s6\s7\rLogicInputElm\s3\rLogicInputElm\s4\rLogicInputElm\s6\rLogicInputElm\s8\rLogicInputElm\s9\rLogicInputElm\s10\rMultiplexerElm\s11\s12\s10\s9\s5\s8\s13\rMultiplexerElm\s14\s15\s16\s17\s5\s18\s19\rLogicInputElm\s16\rLogicInputElm\s17\rLogicInputElm\s18\rLogicInputElm\s20\rLogicInputElm\s21\rLogicInputElm\s22\rMultiplexerElm\s23\s24\s22\s21\s5\s20\s25\rMultiplexerElm\s26\s27\s28\s29\s5\s30\s31\rLogicInputElm\s28\rLogicInputElm\s29\rLogicInputElm\s30\rLogicInputElm\s32\rLogicInputElm\s33\rLogicInputElm\s34\rMultiplexerElm\s35\s36\s34\s33\s5\s32\s37\rMultiplexerElm\s38\s39\s40\s41\s5\s42\s43\rLogicInputElm\s40\rLogicInputElm\s41\rLogicInputElm\s42\rLogicInputElm\s44\rLogicInputElm\s45\rLogicInputElm\s46\rMultiplexerElm\s47\s48\s46\s45\s5\s44\s49\rMultiplexerElm\s50\s51\s52\s53\s5\s54\s55\rLogicInputElm\s52\rLogicInputElm\s53\rLogicInputElm\s54\rLogicInputElm\s56\rLogicInputElm\s57\rLogicInputElm\s58\rMultiplexerElm\s59\s60\s58\s57\s5\s56\s61\rMultiplexerElm\s62\s63\s64\s65\s5\s66\s67\rLogicInputElm\s64\rLogicInputElm\s65\rLogicInputElm\s66\rLogicInputElm\s68\rLogicInputElm\s69\rLogicInputElm\s70\rMultiplexerElm\s71\s72\s70\s69\s5\s68\s73\rMultiplexerElm\s74\s75\s76\s77\s5\s78\s79\rLogicInputElm\s76\rLogicInputElm\s77\rLogicInputElm\s78\rLogicInputElm\s80\rLogicInputElm\s81\rLogicInputElm\s82\rMultiplexerElm\s83\s84\s82\s81\s5\s80\s85\rMultiplexerElm\s86\s87\s88\s89\s5\s90\s91\rLogicInputElm\s88\rLogicInputElm\s89\rLogicInputElm\s90\rLogicInputElm\s92\rLogicInputElm\s93\rLogicInputElm\s94\rMultiplexerElm\s95\s96\s94\s93\s5\s92\s97 0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2\s0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2\s0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2\s0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2\s0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2\s0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2\s0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2\s0\\s2\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s2\\s0\\strue\\s5\\s0\s0\\s2
+410 -1408 -160 -1296 -96 1 Mux16 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2 0\s2 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 2\s0\strue\s5\s0 0\s2
+L -1408 -160 -1520 -160 2 0 false 5 0
+L -1408 -128 -1520 -128 2 0 false 5 0
+L -1408 -64 -1520 -64 2 0 false 5 0
+L -1408 -96 -1520 -96 2 0 false 5 0
+L -1408 32 -1520 32 2 0 false 5 0
+L -1408 64 -1520 64 2 0 false 5 0
+L -1408 0 -1520 0 2 0 false 5 0
+L -1408 -32 -1520 -32 2 0 false 5 0
+L -1408 224 -1520 224 2 0 false 5 0
+L -1408 256 -1520 256 2 0 false 5 0
+L -1408 320 -1520 320 2 0 false 5 0
+L -1408 288 -1520 288 2 0 false 5 0
+L -1408 160 -1520 160 2 0 false 5 0
+L -1408 192 -1520 192 2 0 false 5 0
+L -1408 128 -1520 128 2 0 false 5 0
+L -1408 96 -1520 96 2 0 false 5 0
+L -1408 608 -1520 608 2 1 false 5 0
+L -1408 640 -1520 640 2 1 false 5 0
+L -1408 704 -1520 704 2 1 false 5 0
+L -1408 672 -1520 672 2 1 false 5 0
+L -1408 800 -1520 800 2 1 false 5 0
+L -1408 832 -1520 832 2 1 false 5 0
+L -1408 768 -1520 768 2 1 false 5 0
+L -1408 736 -1520 736 2 1 false 5 0
+L -1408 480 -1520 480 2 1 false 5 0
+L -1408 512 -1520 512 2 1 false 5 0
+L -1408 576 -1520 576 2 1 false 5 0
+L -1408 544 -1520 544 2 1 false 5 0
+L -1408 416 -1520 416 2 1 false 5 0
+L -1408 448 -1520 448 2 1 false 5 0
+L -1408 384 -1520 384 2 1 false 5 0
+L -1408 352 -1520 352 2 1 false 5 0
+M -1248 -160 -1152 -160 2 2.5
+M -1248 -128 -1152 -128 2 2.5
+M -1248 -64 -1152 -64 2 2.5
+M -1248 -96 -1152 -96 2 2.5
+M -1248 32 -1152 32 2 2.5
+M -1248 64 -1152 64 2 2.5
+M -1248 0 -1152 0 2 2.5
+M -1248 -32 -1152 -32 2 2.5
+M -1248 224 -1152 224 2 2.5
+M -1248 256 -1152 256 2 2.5
+M -1248 320 -1152 320 2 2.5
+M -1248 288 -1152 288 2 2.5
+M -1248 160 -1152 160 2 2.5
+M -1248 192 -1152 192 2 2.5
+M -1248 128 -1152 128 2 2.5
+M -1248 96 -1152 96 2 2.5
+L -1344 896 -1344 976 2 0 false 5 0
