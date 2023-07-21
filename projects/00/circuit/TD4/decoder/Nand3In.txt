@@ -1,0 +1,3 @@
+$ 1 0.000005 10.20027730826997 50 5 43 5e-11
+. Nand3In 1 5 3 4 IN1 5 0 2 IN2 4 1 2 IN3 1 2 2 OUT 6 0 3 AndGateElm\s1\s2\s3\rAndGateElm\s4\s5\s2\rInverterElm\s3\s6 0\\s2\\s0\\s5\s0\\s2\\s0\\s5\s0\\s0.5\\s5
+410 144 176 160 192 1 Nand3In 0\s2\s0\s5 0\s2\s0\s5 0\s0.5\s5
